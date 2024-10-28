@@ -67,44 +67,5 @@ class Program
         {
             Console.WriteLine("Unfortunately you have not passed the course. Please keep trying.");
         }
-
-
-// subgrade = grade % 10
-
-// if subgrade < 3:
-//     sign = '-'
-// elif subgrade >= 7:
-//     sign = '+'
-// else:
-//     sign = ''
-
-// if grade > 93:
-//     sign = ''
-
-// if letter == 'F':
-//     sign = ''
-     
-// print (f'Your grade for this course is {letter}{sign}')
-
-// if grade >= 70:
-//     print (f'Congradulations you have passed the class.')
-// else:
-//     print ('You have recieved a failing grade. Reach out to mentoring for additional help. ')
-
-
-
-
-//         if grade >= 90:
-//     letter = 'A'
-// elif grade >= 80:
-//     letter = 'B'
-// elif grade >= 70:
-//     letter = 'C'
-// elif grade >= 60:
-//     letter = 'D'
-// elif grade < 60:
-//     letter = 'F'
-
-
     }
 }
