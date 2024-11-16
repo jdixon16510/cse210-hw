@@ -34,12 +34,16 @@ class Program
             }
             else if (input == "3")
             {
+                Console.Write("File to save: ");
+                string fileName = Console.ReadLine();
                 theJournal.SaveToFile("fileName");
 
                 // Console.WriteLine($"Menu Selection {input}");
             }
             else if (input == "4")
             {
+                Console.Write("File to open: ");
+                string fileName = Console.ReadLine();
                 theJournal.LoadFromFile("fileName");
                 
                 // Console.WriteLine($"Menu Selection {input}");

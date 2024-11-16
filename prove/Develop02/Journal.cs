@@ -18,7 +18,7 @@ public class Journal
         string post = Console.ReadLine();
         newEntry._entryText = post;
 
-        
+
     }
 
     public void DisplayAll()
@@ -39,10 +39,11 @@ public class Journal
         string[] lines = System.IO.File.ReadAllLines(file);
         foreach (string line in lines)
         {
-            string[] parts = line.Split(",");
+            string[] parts = line.Split("~~");
 
             string firstName = parts[0];
             string lastName = parts[1];
+            
         }
     }
 }
