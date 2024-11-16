@@ -11,7 +11,7 @@ class Program
         while (input != "5")
         {
             Console.WriteLine(
-                "Please enter a number from the menu\n\n"+
+                "\nPlease enter a number from the menu\n\n"+
                 "Main Menu\n"+
                 "1 - Journal Entry\n"+
                 "2 - Display Journal\n"+
@@ -22,31 +22,27 @@ class Program
             input = Console.ReadLine();
             if (input == "1")
             {
-                theJournal.AddEntry(newEntry);
+                theJournal.AddEntry();
                 
-                // Console.WriteLine($"Menu Selection {input}");
             }
             else if (input == "2")
             {
                 theJournal.DisplayAll();
 
-                // Console.WriteLine($"Menu Selection {input}");
             }
             else if (input == "3")
             {
                 Console.Write("File to save: ");
                 string fileName = Console.ReadLine();
-                theJournal.SaveToFile("fileName");
-
-                // Console.WriteLine($"Menu Selection {input}");
+                theJournal.SaveToFile(fileName);
+     
             }
             else if (input == "4")
             {
                 Console.Write("File to open: ");
                 string fileName = Console.ReadLine();
-                theJournal.LoadFromFile("fileName");
-                
-                // Console.WriteLine($"Menu Selection {input}");
+                theJournal.LoadFromFile(fileName);
+             
             }
         }
         
