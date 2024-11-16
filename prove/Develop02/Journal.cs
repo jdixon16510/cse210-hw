@@ -2,11 +2,20 @@ using System.Diagnostics.CodeAnalysis;
 using System.Security.Cryptography.X509Certificates;
 using System.IO;
 
+// Journal Class
+//      has one attribute
+//          _entries is a list that holds each entry object
+//      has four methods
+//          AddEntry builds the entry object and adds it to the _entries list
+//          DisplayAll displays all the entries in the _entries list and calls the Display method from the Entry Class
+//          SaveToFile has one string parameter File and saves all the entries in the _entries list to the file named
+//          LoadFromFile has one string parameter File and loads the file, clears any entries and builds a new _entries list
+
+
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
 
-    // public void AddEntry(Entry newEntry)
     public void AddEntry()
     {
         PromptGenerator newPrompt = new PromptGenerator();
@@ -22,8 +31,6 @@ public class Journal
         newEntry._entryText = post;
 
         _entries.Add(newEntry);
-
-
     }
 
     public void DisplayAll()
@@ -40,35 +47,24 @@ public class Journal
 
         foreach (Entry entry in _entries)
         {
-            // string date = entry._date;
-            // string prompt = entry._promptText;
-            // string journalEntry = entry._entryText;
-
             journalFile.WriteLine ($"{entry._date}~~{entry._promptText}~~{entry._entryText}");
-
         }
     }
 
     public void LoadFromFile(string file)
     {
         string[] lines = System.IO.File.ReadAllLines(file);
-        Entry fileEntry = new Entry();
         _entries = [];
         
 
         foreach (string line in lines)
         {
-            Console.WriteLine(line);
+            Entry fileEntry = new Entry();
             string[] journalParts = line.Split("~~");
 
             fileEntry._date = journalParts[0];
             fileEntry._promptText = journalParts[1];
             fileEntry._entryText = journalParts[2];
-            
-            Console.WriteLine($"Date: {fileEntry._date}");
-            Console.WriteLine($"{fileEntry._promptText}");
-            Console.WriteLine($"{fileEntry._entryText}");
-            Console.WriteLine();
             
             _entries.Add(fileEntry);
         }

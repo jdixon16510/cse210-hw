@@ -1,8 +1,12 @@
 using System.Security.Cryptography.X509Certificates;
 
+// PromptGenerator Class
+//      has one attribute
+//          _prompts is a list of prompts
+//      has one method
+//          GetRandomPrompt returns a single random prompt from the _prompts list
+
 public class PromptGenerator
-// _prompts is a list of prompts
-// GetRandomPrompt returns a single random prompt from the _prompts list
 
 {
     public List<string> _prompts = new List<string>() 
@@ -29,7 +33,6 @@ public class PromptGenerator
             {
                 int index = rand.Next(0, _prompts.Count);
                 prompt = _prompts[index];
-                _prompts.RemoveAt(index);
             }
             
         return prompt;
