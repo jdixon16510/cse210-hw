@@ -33,6 +33,7 @@ public class PromptGenerator
             {
                 int index = rand.Next(0, _prompts.Count);
                 prompt = _prompts[index];
+                _prompts.RemoveAt(index);
             }
             
         return prompt;
