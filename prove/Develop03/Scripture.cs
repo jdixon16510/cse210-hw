@@ -1,5 +1,6 @@
 
 
+
 public class Scripture
 {
     private Reference _reference;

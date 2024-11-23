@@ -4,8 +4,11 @@ class Program
 {
     static void Main()
     {
-        // Create reference and scripture
-        string _filePath = "scriptures.txt";
+        
+        // Get reference and scripture from file
+        string currentFolderPath = Directory.GetCurrentDirectory();
+        string _fileName = "scriptures.txt";
+        string _filePath = Path.Combine(currentFolderPath, _fileName);
         Scripture scripture = Scripture.LoadFromFile(_filePath);
 
         // Program loop
@@ -34,5 +37,6 @@ class Program
             // Hide random words
             scripture.HideRandomWords(2);
         }
+        
     }
 }
