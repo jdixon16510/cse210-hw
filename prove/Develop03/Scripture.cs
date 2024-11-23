@@ -13,6 +13,7 @@ public class Scripture
     
     public static Scripture LoadFromFile(string filePath)
     {
+        
         string[] lines = File.ReadAllLines(filePath);
         List<List<string>> scriptureBlocks = new List<List<string>>();
         List<string> currentBlock = new List<string>();
