@@ -1,3 +1,10 @@
+/*
+    Exceeding Requirements
+    Added a text file containing scriptures with references and have them selected randomly. 
+    Accounted for multiple word books example 1 Nephi. 
+    Put the file methods into the Scripture class to keep the Main program clean.
+*/
+
 using System;
 
 class Program
@@ -6,12 +13,12 @@ class Program
     {
         
         // Get reference and scripture from file
-        string currentFolderPath = Directory.GetCurrentDirectory();
-        string _fileName = "scriptures.txt";
-        string _filePath = Path.Combine(currentFolderPath, _fileName);
+        
+        string _filePath = "scriptures.txt";
+        
         Scripture scripture = Scripture.LoadFromFile(_filePath);
 
-        // Program loop
+        
         while (true)
         {
             // Clear the console and display the scripture
@@ -21,7 +28,7 @@ class Program
             // Check if scripture is completely hidden
             if (scripture.IsCompletelyHidden())
             {
-                Console.WriteLine("\nAll words are hidden. Program will now exit.");
+                Console.WriteLine("\nAll words are now hidden. The program has ended. ");
                 break;
             }
 
@@ -34,7 +41,7 @@ class Program
                 break;
             }
 
-            // Hide random words
+            // Hide random words. number is how many at a time to hide
             scripture.HideRandomWords(2);
         }
         

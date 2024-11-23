@@ -1,4 +1,17 @@
-
+/*
+    Scripture Class
+        Has two attributes
+            private Reference _reference sets a varible to the Reference Class
+            private List<Word> _words sets a varible to a list of Word class
+        Has five methods
+            Scripture LoadFromFile(string filePath) loads the file containing the scriptures to use. Randomly selects a scipture. Seperates the reference text from the text. returns the reference and the text strings.
+            Reference ParseReference(string referenceLine) loads the reference string. parses the string into book chapter and verse. returns a new reference of book chapter start verse and end verse if required.
+            HideRandomWords (int numberToHide) selects the random words to hide and uses the numberToHide int to determine how many at one time to hide.
+            GetDisplayText() returns the reference and the scripture string to display
+            IsCompletelyHidden() determines if the scripture is completely hidden
+        Has one Constructor
+            Scripture(Reference reference, string text) gets the reference text and the complete scripture string to split and create the _words list
+*/
 
 
 public class Scripture
@@ -54,15 +67,15 @@ public class Scripture
 
     private static Reference ParseReference(string referenceLine)
     {
-        // Example formats: "1 Nephi 3:7", "John 3:16", "Proverbs 3:5-6"
+        
         string[] parts = referenceLine.Split(' ');
 
         
-        // Extract book name (all parts except the last one)
+        
         string book = string.Join(" ", parts.Take(parts.Length - 1));
         string chapterAndVerses = parts.Last();
 
-        // Parse chapter and verses
+        
         string[] chapterAndVerseParts = chapterAndVerses.Split(':');
         
         int chapter = int.Parse(chapterAndVerseParts[0]);
