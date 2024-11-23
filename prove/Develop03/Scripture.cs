@@ -13,6 +13,7 @@
             Scripture(Reference reference, string text) gets the reference text and the complete scripture string to split and create the _words list
 */
 
+
 public class Scripture
 {
     private Reference _reference;

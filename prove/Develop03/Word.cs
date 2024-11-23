@@ -12,7 +12,6 @@
             Word(string text) gets the _word and sets the _isHidden the false
 */
 
-
 public class Word
 {
     private string _text;
