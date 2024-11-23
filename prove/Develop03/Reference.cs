@@ -11,6 +11,7 @@
             Reference(string book, int chapter, int startVerse, int? endVerse = null) gets the scripture reference parts
 */
 
+
 public class Reference
 {
     private string _book;
