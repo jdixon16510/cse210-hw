@@ -12,7 +12,7 @@ public class Activity
         _duration = int.Parse(Console.ReadLine());
 
         Console.WriteLine("Get ready...");
-        Pause(3); // Pause for 3 seconds
+        Pause(3); 
         
         // Call the PerformActivity method in each subclass
         PerformActivity();
@@ -25,7 +25,7 @@ public class Activity
     {
         Console.WriteLine("Good job! You completed the activity.");
         Console.WriteLine($"Duration: {_duration} seconds.");
-        Pause(3); // Pause for 3 seconds
+        Pause(3); 
     }
 
     // Pause method with spinner animation
@@ -35,9 +35,9 @@ public class Activity
         for (int i = 0; i < seconds; i++)
         {
             ShowSpinner();
-            Thread.Sleep(1000); // Wait for 1 second
+            Thread.Sleep(1000); 
         }
-        Console.WriteLine(); // New line after the pause
+        Console.WriteLine(); 
     }
 
     // Countdown method with spinner animation
@@ -47,7 +47,7 @@ public class Activity
         {
             Console.Write($"{i} ");
             ShowSpinner();
-            Thread.Sleep(1000); // Wait for 1 second
+            Thread.Sleep(1000); 
         }
         Console.WriteLine();
     }
@@ -59,11 +59,11 @@ public class Activity
         foreach (char spin in spinner)
         {
             Console.Write($"\r{spin}  ");
-            Thread.Sleep(250); // Wait for a quarter of a second before changing the spinner
+            Thread.Sleep(250); 
         }
     }
 
-    // Abstract method for performing the activity, to be implemented by subclasses
+    
     protected virtual void PerformActivity()
     {
         Console.WriteLine("Performing activity...");
